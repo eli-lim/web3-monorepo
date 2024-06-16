@@ -1,5 +1,7 @@
 # Web3 Full-stack Mono-repo Example
 
+![image](./README-dev.gif)
+
 This is a full-stack mono-repo example for web3 projects.
 
 It includes a NextJS front-end, a Node.js back-end, and a foundry subproject to maintain smart contracts.
@@ -10,14 +12,15 @@ allowing for **type safety across the entire stack**.
 The frontend and backend are set up to communicate with each other using tRPC.
 
 ## Setting up
+1. Setup postgres on local dev for `prisma`
+2. Run:
+   ```bash
+   # Use the project's node version
+   nvm use
 
-```bash
-# Use the project's node version
-nvm use
-
-# Install dependencies
-pnpm install
-```
+   # Install dependencies
+   pnpm install
+   ```
 
 ## Development
 
