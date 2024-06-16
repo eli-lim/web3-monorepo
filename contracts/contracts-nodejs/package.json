@@ -1,0 +1,25 @@
+{
+  "name": "@repo/contracts-nodejs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/generated.js",
+  "types": "dist/generated.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b ./tsconfig.json --force",
+    "generate": "wagmi generate"
+  },
+  "dependencies": {
+    "viem": "2.13.6",
+    "wagmi": "2.9.8"
+  },
+  "devDependencies": {
+    "@repo/contracts-foundry": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@wagmi/cli": "^2.1.8",
+    "typescript": "^5.3.3"
+  }
+}

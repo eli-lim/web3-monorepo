@@ -1,0 +1,20 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "prisma:generate": {
+      "inputs": ["prisma/schema.prisma"],
+      "outputs": ["prisma/generated/**"],
+      "cache": true
+    },
+    "dev": {
+      "dependsOn": ["prisma:generate", "^build"],
+      "inputs": ["src/**"],
+      "persistent": true
+    },
+    "build": {
+      "inputs": ["tsconfig.json", "tsconfig.build.json", "src/**"],
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build", "prisma:generate"]
+    }
+  }
+}

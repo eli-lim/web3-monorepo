@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.--tokens-dark {
+  color-scheme: dark;
+  --color-invert: 255 255 255;
+
+  --color-brand-300: 77 148 255;
+  --color-brand-500: 0 92 255;
+
+  --color-mono-50: 250 250 250;
+  --color-mono-100: 245 245 245;
+  --color-mono-200: 229 229 229;
+  --color-mono-300: 212 212 212;
+  --color-mono-400: 163 163 163;
+  --color-mono-500: 115 115 115;
+  --color-mono-600: 82 82 82;
+  --color-mono-700: 64 64 64;
+  --color-mono-800: 38 38 38;
+  --color-mono-900: 23 23 23;
+  --color-mono-950: 10 10 10;
+
+  --color-red-500: 239 68 68;
+  --color-green-500: 34 197 94;
+  --color-yellow-500: 234 179 8;
+}
+
+.--tokens-light {
+  color-scheme: light;
+  --color-invert: 0 0 0;
+
+  --color-brand-300: 0 92 255;
+  --color-brand-500: 0 92 255;
+
+  --color-mono-50: 10 10 10;
+  --color-mono-100: 23 23 23;
+  --color-mono-200: 38 38 38;
+  --color-mono-300: 64 64 64;
+  --color-mono-400: 82 82 82;
+  --color-mono-500: 115 115 115;
+  --color-mono-600: 163 163 163;
+  --color-mono-700: 212 212 212;
+  --color-mono-800: 229 229 229;
+  --color-mono-900: 245 245 245;
+  --color-mono-950: 250 250 250;
+
+  --color-red-500: 239 68 68;
+  --color-green-500: 34 197 94;
+  --color-yellow-500: 234 179 8;
+}
+
+@layer base {
+  /* Default */
+  :root {
+    @apply --tokens-dark;
+  }
+
+  /* Override: System */
+  @media (prefers-color-scheme: light) {
+    :root {
+      @apply --tokens-light;
+    }
+  }
+
+  /* Override: Light */
+  html[data-theme='light'] {
+    @apply --tokens-light;
+  }
+
+  /* Override: Dark */
+  html[data-theme='dark'] {
+    @apply --tokens-dark;
+  }
+}
+
+@layer base {
+  input[type='number'].appearance-none::-webkit-inner-spin-button,
+  input[type='number'].appearance-none::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'].appearance-none {
+    -moz-appearance: textfield;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "generate": {
+      "inputs": ["wagmi.config.ts"],
+      "outputs": ["src/**"],
+      "dependsOn": ["^build"]
+    },
+    "build": {
+      "inputs": ["tsconfig.json", "src/**"],
+      "outputs": ["dist/**"],
+      "dependsOn": ["generate"]
+    }
+  }
+}

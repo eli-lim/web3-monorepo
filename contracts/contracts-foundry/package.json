@@ -1,0 +1,13 @@
+{
+  "name": "@repo/contracts-foundry",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "out"
+  ],
+  "scripts": {
+    "build": "forge build",
+    "dev": "anvil -b 2",
+    "test": "forge test"
+  }
+}

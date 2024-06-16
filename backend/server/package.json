@@ -1,0 +1,44 @@
+{
+  "name": "@repo/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b ./tsconfig.build.json --force",
+    "clean": "rm -rf dist",
+    "dev": "dotenv -e .env.dev -- tsx --watch src/index.ts",
+    "lint": "eslint ./src --fix --max-warnings 0",
+    "prisma:generate": "prisma generate",
+    "prisma:generate:watch": "prisma generate --watch",
+    "prisma:studio": "prisma studio",
+    "test": "node --import tsx --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "5.8.1",
+    "@repo/contracts-deployments": "workspace:*",
+    "@repo/contracts-nodejs": "workspace:*",
+    "@trpc/client": "^10.45.0",
+    "@trpc/server": "^10.45.0",
+    "viem": "2.13.6",
+    "wagmi": "2.9.8",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/eslint": "^8.56.1",
+    "@types/node": "^20.10.6",
+    "dotenv-cli": "^7.3.0",
+    "eslint": "^8.56.0",
+    "prisma": "^5.8.1",
+    "tsx": "^4.15.1",
+    "typescript": "^5.3.3"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}

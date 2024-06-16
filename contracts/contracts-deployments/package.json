@@ -1,0 +1,23 @@
+{
+  "name": "@repo/contracts-deployments",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b ./tsconfig.json --force",
+    "dev": "./scripts/deploy-localhost.sh"
+  },
+  "dependencies": {
+    "viem": "2.13.6"
+  },
+  "devDependencies": {
+    "@repo/contracts-foundry": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "generate": {
+      "outputs": ["src/generated.ts"],
+      "dependsOn": ["^build"]
+    },
+    "build": {
+      "inputs": ["tsconfig.json", "src/**"],
+      "outputs": ["dist/**"],
+      "dependsOn": ["generate"]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.husky
+.idea
+.vscode
+.next
+.turbo
+node_modules
+dist
+pnpm-lock.yaml
+schema.gql
+public.gql
+generated/

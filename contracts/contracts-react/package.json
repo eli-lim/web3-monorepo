@@ -1,0 +1,30 @@
+{
+  "name": "@repo/contracts-react",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/generated.js",
+  "types": "dist/generated.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b ./tsconfig.json --force",
+    "generate": "wagmi generate"
+  },
+  "dependencies": {
+    "@tanstack/react-query": ">=5.0.0",
+    "react": ">=18",
+    "viem": "2.13.6",
+    "wagmi": "2.9.8"
+  },
+  "devDependencies": {
+    "@repo/contracts-foundry": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/chai": "^4.3.16",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@wagmi/cli": "^2.1.8",
+    "typescript": "^5.3.3"
+  }
+}

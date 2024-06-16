@@ -1,0 +1,10 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "dev": {
+      "persistent": false,
+      "inputs": ["scripts/**"],
+      "cache": true
+    }
+  }
+}

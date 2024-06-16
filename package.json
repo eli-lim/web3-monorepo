@@ -1,0 +1,32 @@
+{
+  "name": "@repo/monorepo",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "clean": "turbo clean",
+    "dev": "turbo dev",
+    "dev:watch": "turbo watch dev",
+    "format": "prettier --write .",
+    "lint": "turbo lint",
+    "prepare": "husky install",
+    "test": "turbo test"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
+  },
+  "prettier": "@vercel/style-guide/prettier",
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@vercel/style-guide": "^5.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "turbo": "^2.0.4"
+  },
+  "packageManager": "pnpm@9.2.0",
+  "engines": {
+    "node": "^22",
+    "pnpm": "^9"
+  }
+}
