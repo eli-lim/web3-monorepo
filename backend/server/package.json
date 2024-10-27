@@ -10,12 +10,15 @@
   "scripts": {
     "build": "tsc -b ./tsconfig.build.json --force",
     "clean": "rm -rf dist",
-    "dev": "dotenv -e .env.dev -- tsx --watch src/index.ts",
-    "lint": "eslint ./src --fix --max-warnings 0",
+    "dev": "dotenv -e .env -- tsx --watch src/index.ts",
+    "dev:db:clean": "prisma migrate reset",
+    "dev:db:sync": "prisma migrate dev",
+    "dev:infra": "docker-compose up -d --wait",
     "prisma:generate": "prisma generate",
     "prisma:generate:watch": "prisma generate --watch",
     "prisma:studio": "prisma studio",
-    "test": "node --import tsx --test src/**/*.test.ts"
+    "test": "node --import tsx --test src/**/*.test.ts",
+    "lint": "eslint ./src --fix --max-warnings 0"
   },
   "dependencies": {
     "@prisma/client": "5.8.1",

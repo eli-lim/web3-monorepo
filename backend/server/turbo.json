@@ -7,9 +7,18 @@
       "cache": true
     },
     "dev": {
-      "dependsOn": ["prisma:generate", "^build"],
+      "dependsOn": ["prisma:generate", "^build", "dev:infra", "dev:db:sync"],
       "inputs": ["src/**"],
+      "cache": false,
       "persistent": true
+    },
+    "dev:db:sync": {
+      "cache": false,
+      "dependsOn": ["dev:infra"]
+    },
+    "dev:infra": {
+      "inputs": ["docker-compose.yml"],
+      "cache": false
     },
     "build": {
       "inputs": ["tsconfig.json", "tsconfig.build.json", "src/**"],

@@ -6,6 +6,7 @@ CREATE TABLE "User" (
     "id" TEXT NOT NULL DEFAULT uuid_generate_v4(),
     "email" TEXT NOT NULL,
     "name" TEXT,
+    "address" TEXT,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );

@@ -12,21 +12,23 @@ allowing for **type safety across the entire stack**.
 The frontend and backend are set up to communicate with each other using tRPC.
 
 ## Setting up
-1. Setup postgres on local dev for `prisma`
-2. Run:
-   ```bash
-   # Use the project's node version
-   nvm use
+```shell
+# Install foundry
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
 
-   # Install dependencies
-   pnpm install
-   ```
+# Use the project's node version
+nvm install 
+nvm use
 
-## Development
+# Use the project's package manager
+corepack enable
 
-To start the whole stack for development, run the following command:
+# Install dependencies
+pnpm install
 
-```bash
+# Start the whole stack
+# Give it a moment while it downloads a postgres container image and spins it up
 pnpm dev
 ```
 
